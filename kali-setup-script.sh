@@ -59,6 +59,12 @@ apt-get update
 # make sure Downloads folder exists
 mkdir -p ~/Downloads 2>/dev/null
 
+printf '\n============================================================\n'
+printf '[+] Setting up RDP with Xfce\n'
+printf '============================================================\n\n'
+sudo apt-get install -y kali-desktop-xfce xorg xrdp
+# sudo sed -i 's/port=3389/port=3390/g' /etc/xrdp/xrdp.ini
+sudo systemctl enable xrdp --now
 
 # if we're not on a headless system
 if [ -n "$DISPLAY" ]
